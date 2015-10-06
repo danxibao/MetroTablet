@@ -54,7 +54,9 @@ namespace Project_try
             }
             else
             {
+
                 MemberInfo temp = new MemberInfo();
+                temp.Create();
                 temp = temp.Select(userName.Text);
                 if (temp == null)
                 {

@@ -8,29 +8,29 @@
     <PackageArchitecture>neutral</PackageArchitecture>
     <PackageIdentityName>d25ee11c-093c-4015-952d-7b2627be0594</PackageIdentityName>
     <IntermediateOutputPath>E:\GIT\减压包\Project_try\obj\Debug\</IntermediateOutputPath>
-    <RegisteredManifestChecksum>8CE91841782909E60D2D822DEB5C3E3638C42269C070B548F6A937EB074052C4</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>d25ee11c-093c-4015-952d-7b2627be0594_1.0.0.4_neutral__82cb93zms6dq8</RegisteredPackageMoniker>
+    <RegisteredManifestChecksum>967505BBF3D9457CAE96A1EE140B9056FAAC350F8093F2FFEDCCA433DE5DCA92</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>d25ee11c-093c-4015-952d-7b2627be0594_1.0.0.6_neutral__82cb93zms6dq8</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>d25ee11c-093c-4015-952d-7b2627be0594_82cb93zms6dq8!App</RegisteredUserModeAppID>
     <RegisteredPackageID>d25ee11c-093c-4015-952d-7b2627be0594</RegisteredPackageID>
     <RegisteredPackagePublisher>CN=alex1993</RegisteredPackagePublisher>
-    <RegisteredVersion>1.0.0.4</RegisteredVersion>
+    <RegisteredVersion>1.0.0.6</RegisteredVersion>
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
     <AppXManifest Include="E:\GIT\减压包\Project_try\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-05T16:47:53.807</Modified>
+      <Modified>2015-10-06T08:33:21.072</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\bin\Debug\Project_try.exe">
       <PackagePath>Project_try.exe</PackagePath>
-      <Modified>2015-10-05T16:47:53.245</Modified>
+      <Modified>2015-10-06T08:33:20.619</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\SQLite.WinRT81\3.8.11.1\Redist\Debug\x64\sqlite3.dll">
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\SQLite.WinRT81\3.8.11.1\Redist\Debug\x86\sqlite3.dll">
       <PackagePath>sqlite3.dll</PackagePath>
-      <Modified>2015-08-22T13:26:43.754</Modified>
+      <Modified>2015-08-22T13:26:43.880</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\Assets\Article\article.png">
       <PackagePath>Assets\Article\article.png</PackagePath>
@@ -62,7 +62,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\Assets\Images\Frame.png">
       <PackagePath>Assets\Images\Frame.png</PackagePath>
-      <Modified>2015-09-25T04:55:06.404</Modified>
+      <Modified>2015-10-06T07:09:41.600</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\Assets\Images\IllusionPic\02.png">
       <PackagePath>Assets\Images\IllusionPic\02.png</PackagePath>
@@ -518,7 +518,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\Assets\Images\山水情2.jpg">
       <PackagePath>Assets\Images\山水情2.jpg</PackagePath>
-      <Modified>2015-09-25T11:33:51.709</Modified>
+      <Modified>2015-10-06T07:09:09.830</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\Assets\Music\7dd98d1001e939013264d0a87aec54e737d196c5.jpg">
       <PackagePath>Assets\Music\7dd98d1001e939013264d0a87aec54e737d196c5.jpg</PackagePath>
@@ -1106,127 +1106,127 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\bin\Debug\AudioVisual\Article.xbf">
       <PackagePath>AudioVisual\Article.xbf</PackagePath>
-      <Modified>2015-10-05T16:30:19.503</Modified>
+      <Modified>2015-10-06T08:33:20.119</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\bin\Debug\AudioVisual\AudioVisualMain.xbf">
       <PackagePath>AudioVisual\AudioVisualMain.xbf</PackagePath>
-      <Modified>2015-10-05T16:30:19.503</Modified>
+      <Modified>2015-10-06T08:33:20.119</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\bin\Debug\AudioVisual\Interview.xbf">
       <PackagePath>AudioVisual\Interview.xbf</PackagePath>
-      <Modified>2015-10-05T16:30:19.503</Modified>
+      <Modified>2015-10-06T08:33:20.119</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\bin\Debug\AudioVisual\Movie.xbf">
       <PackagePath>AudioVisual\Movie.xbf</PackagePath>
-      <Modified>2015-10-05T16:30:19.504</Modified>
+      <Modified>2015-10-06T08:33:20.119</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\bin\Debug\AudioVisual\Video.xbf">
       <PackagePath>AudioVisual\Video.xbf</PackagePath>
-      <Modified>2015-10-05T16:30:19.504</Modified>
+      <Modified>2015-10-06T08:33:20.119</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\bin\Debug\Music\SingAloud.xbf">
       <PackagePath>Music\SingAloud.xbf</PackagePath>
-      <Modified>2015-10-05T16:30:19.504</Modified>
+      <Modified>2015-10-06T08:33:20.119</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\bin\Debug\Music\MusicDestress.xbf">
       <PackagePath>Music\MusicDestress.xbf</PackagePath>
-      <Modified>2015-10-05T16:30:19.504</Modified>
+      <Modified>2015-10-06T08:33:20.119</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\bin\Debug\Music\Admiration.xbf">
       <PackagePath>Music\Admiration.xbf</PackagePath>
-      <Modified>2015-10-05T16:30:19.504</Modified>
+      <Modified>2015-10-06T08:33:20.119</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\bin\Debug\Music\MusicHypnosis.xbf">
       <PackagePath>Music\MusicHypnosis.xbf</PackagePath>
-      <Modified>2015-10-05T16:30:19.504</Modified>
+      <Modified>2015-10-06T08:33:20.119</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\bin\Debug\Music\Motivation.xbf">
       <PackagePath>Music\Motivation.xbf</PackagePath>
-      <Modified>2015-10-05T16:30:19.504</Modified>
+      <Modified>2015-10-06T08:33:20.119</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\bin\Debug\Music\MusicMain.xbf">
       <PackagePath>Music\MusicMain.xbf</PackagePath>
-      <Modified>2015-10-05T16:30:19.504</Modified>
+      <Modified>2015-10-06T08:33:20.119</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\bin\Debug\Pictures\Illusion.xbf">
       <PackagePath>Pictures\Illusion.xbf</PackagePath>
-      <Modified>2015-10-05T16:30:19.504</Modified>
+      <Modified>2015-10-06T08:33:20.119</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\bin\Debug\Pictures\PicMain.xbf">
       <PackagePath>Pictures\PicMain.xbf</PackagePath>
-      <Modified>2015-10-05T16:30:19.505</Modified>
+      <Modified>2015-10-06T08:33:20.119</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\bin\Debug\Pictures\Pun.xbf">
       <PackagePath>Pictures\Pun.xbf</PackagePath>
-      <Modified>2015-10-05T16:30:19.505</Modified>
+      <Modified>2015-10-06T08:33:20.119</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\bin\Debug\Start.xbf">
       <PackagePath>Start.xbf</PackagePath>
-      <Modified>2015-10-05T16:30:19.505</Modified>
+      <Modified>2015-10-06T08:33:20.119</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\bin\Debug\Main.xbf">
       <PackagePath>Main.xbf</PackagePath>
-      <Modified>2015-10-05T16:30:19.505</Modified>
+      <Modified>2015-10-06T08:33:20.119</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\bin\Debug\AudioVisual\Settings\AudioSettings.xbf">
       <PackagePath>AudioVisual\Settings\AudioSettings.xbf</PackagePath>
-      <Modified>2015-10-05T16:30:19.505</Modified>
+      <Modified>2015-10-06T08:33:20.119</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\bin\Debug\AudioVisual\Settings\HelpSettings.xbf">
       <PackagePath>AudioVisual\Settings\HelpSettings.xbf</PackagePath>
-      <Modified>2015-10-05T16:30:19.505</Modified>
+      <Modified>2015-10-06T08:33:20.119</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\bin\Debug\AudioVisual\Settings\PrivacySettings.xbf">
       <PackagePath>AudioVisual\Settings\PrivacySettings.xbf</PackagePath>
-      <Modified>2015-10-05T16:30:19.506</Modified>
+      <Modified>2015-10-06T08:33:20.119</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\bin\Debug\AudioVisual\Settings\VideoSettings.xbf">
       <PackagePath>AudioVisual\Settings\VideoSettings.xbf</PackagePath>
-      <Modified>2015-10-05T16:30:19.506</Modified>
+      <Modified>2015-10-06T08:33:20.119</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\bin\Debug\User\ChangePassword.xbf">
       <PackagePath>User\ChangePassword.xbf</PackagePath>
-      <Modified>2015-10-05T16:30:19.506</Modified>
+      <Modified>2015-10-06T08:33:20.119</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\bin\Debug\User\User_info.xbf">
       <PackagePath>User\User_info.xbf</PackagePath>
-      <Modified>2015-10-05T16:30:19.506</Modified>
+      <Modified>2015-10-06T08:33:20.119</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\bin\Debug\Pictures\Nature.xbf">
       <PackagePath>Pictures\Nature.xbf</PackagePath>
-      <Modified>2015-10-05T16:30:19.506</Modified>
+      <Modified>2015-10-06T08:33:20.119</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\bin\Debug\User\Login.xbf">
       <PackagePath>User\Login.xbf</PackagePath>
-      <Modified>2015-10-05T16:30:19.506</Modified>
+      <Modified>2015-10-06T08:33:20.119</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\bin\Debug\User\Register.xbf">
       <PackagePath>User\Register.xbf</PackagePath>
-      <Modified>2015-10-05T16:30:19.506</Modified>
+      <Modified>2015-10-06T08:33:20.119</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\bin\Debug\User\Test\Self_test.xbf">
       <PackagePath>User\Test\Self_test.xbf</PackagePath>
-      <Modified>2015-10-05T16:30:19.506</Modified>
+      <Modified>2015-10-06T08:33:20.119</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\bin\Debug\User\Test\test_e.xbf">
       <PackagePath>User\Test\test_e.xbf</PackagePath>
-      <Modified>2015-10-05T16:30:19.506</Modified>
+      <Modified>2015-10-06T08:33:20.119</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\bin\Debug\User\Test\test_d.xbf">
       <PackagePath>User\Test\test_d.xbf</PackagePath>
-      <Modified>2015-10-05T16:30:19.506</Modified>
+      <Modified>2015-10-06T08:33:20.119</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\bin\Debug\User\Test\test_c.xbf">
       <PackagePath>User\Test\test_c.xbf</PackagePath>
-      <Modified>2015-10-05T16:30:19.506</Modified>
+      <Modified>2015-10-06T08:33:20.119</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\bin\Debug\User\Test\test_b.xbf">
       <PackagePath>User\Test\test_b.xbf</PackagePath>
-      <Modified>2015-10-05T16:30:19.506</Modified>
+      <Modified>2015-10-06T08:33:20.119</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\bin\Debug\User\Test\test_a.xbf">
       <PackagePath>User\Test\test_a.xbf</PackagePath>
-      <Modified>2015-10-05T16:30:19.506</Modified>
+      <Modified>2015-10-06T08:33:20.119</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\bin\Debug\Project_try.xr.xml">
       <PackagePath>Project_try.xr.xml</PackagePath>
@@ -1234,7 +1234,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GIT\减压包\Project_try\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-10-05T16:47:53.616</Modified>
+      <Modified>2015-10-06T08:33:20.885</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
