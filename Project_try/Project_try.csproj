@@ -1,0 +1,650 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{96AF9987-CA69-4503-B9ED-20F6B6D384B3}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Project_try</RootNamespace>
+    <AssemblyName>Project_try</AssemblyName>
+    <DefaultLanguage>zh-CN</DefaultLanguage>
+    <TargetPlatformVersion>8.1</TargetPlatformVersion>
+    <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>Project_try_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxBundlePlatforms>neutral</AppxBundlePlatforms>
+    <AppxPackageDir>E:\</AppxPackageDir>
+    <AppxBundle>Auto</AppxBundle>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Folder Include="Assets\User\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AudioVisual\Article.xaml.cs">
+      <DependentUpon>Article.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AudioVisual\AudioVisualMain.xaml.cs">
+      <DependentUpon>AudioVisualMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AudioVisual\Interview.xaml.cs">
+      <DependentUpon>Interview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AudioVisual\ArticleItem.cs" />
+    <Compile Include="AudioVisual\InterviewItem.cs" />
+    <Compile Include="AudioVisual\Movie.xaml.cs">
+      <DependentUpon>Movie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AudioVisual\Video.xaml.cs">
+      <DependentUpon>Video.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Music\SingAloud.xaml.cs">
+      <DependentUpon>SingAloud.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Music\MusicDestress.xaml.cs">
+      <DependentUpon>MusicDestress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Music\Admiration.xaml.cs">
+      <DependentUpon>Admiration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Music\MusicHypnosis.xaml.cs">
+      <DependentUpon>MusicHypnosis.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Music\MusicData.cs" />
+    <Compile Include="Music\Motivation.xaml.cs">
+      <DependentUpon>Motivation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Music\MusicMain.xaml.cs">
+      <DependentUpon>MusicMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pictures\Illusion.xaml.cs">
+      <DependentUpon>Illusion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pictures\PicMain.xaml.cs">
+      <DependentUpon>PicMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pictures\Pun.xaml.cs">
+      <DependentUpon>Pun.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Start.xaml.cs">
+      <DependentUpon>Start.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Main.xaml.cs">
+      <DependentUpon>Main.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AudioVisual\PlayPauseButtonState.cs" />
+    <Compile Include="AudioVisual\Settings\AudioSettings.xaml.cs">
+      <DependentUpon>AudioSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AudioVisual\Settings\HelpSettings.xaml.cs">
+      <DependentUpon>HelpSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AudioVisual\Settings\PrivacySettings.xaml.cs">
+      <DependentUpon>PrivacySettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AudioVisual\Settings\VideoSettings.xaml.cs">
+      <DependentUpon>VideoSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User\SQLite.cs" />
+    <Compile Include="User\SQLiteAsync.cs" />
+    <Compile Include="User\ChangePassword.xaml.cs">
+      <DependentUpon>ChangePassword.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User\User_info.xaml.cs">
+      <DependentUpon>User_info.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\NavigationHelper.cs" />
+    <Compile Include="Common\ObservableDictionary.cs" />
+    <Compile Include="Common\RelayCommand.cs" />
+    <Compile Include="Common\SuspensionManager.cs" />
+    <Compile Include="Pictures\ImagePath.cs" />
+    <Compile Include="Pictures\Nature.xaml.cs">
+      <DependentUpon>Nature.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User\Register.xaml.cs">
+      <DependentUpon>Register.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User\User.cs" />
+    <Compile Include="User\Test\Self_test.xaml.cs">
+      <DependentUpon>Self_test.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User\Test\test_e.xaml.cs">
+      <DependentUpon>test_e.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User\Test\test_d.xaml.cs">
+      <DependentUpon>test_d.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User\Test\test_c.xaml.cs">
+      <DependentUpon>test_c.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User\Test\test_b.xaml.cs">
+      <DependentUpon>test_b.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User\Test\test_a.xaml.cs">
+      <DependentUpon>test_a.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="Assets\Article\Catalog.dat" />
+    <None Include="Assets\Article\心理文章.pdf" />
+    <None Include="packages.config" />
+    <None Include="Project_try_TemporaryKey.pfx" />
+    <PRIResource Include="AudioVisual\Strings\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Article\article.png" />
+    <Content Include="Assets\Article\document.png" />
+    <Content Include="Assets\Article\群星—与狼共舞.mp3" />
+    <Content Include="Assets\AudioVisual\BackCanvas.jpg" />
+    <Content Include="Assets\AudioVisual\MovieLogo.png" />
+    <Content Include="Assets\AudioVisual\（1）心理文章.png" />
+    <Content Include="Assets\AudioVisual\（2）心理访谈.png" />
+    <Content Include="Assets\AudioVisual\（3）心理视频.png" />
+    <Content Include="Assets\AudioVisual\（4）心理影片.png" />
+    <Content Include="Assets\BackGround\2-1.mp3" />
+    <Content Include="Assets\BackGround\2-2-3.mp3" />
+    <Content Include="Assets\BackGround\MainBackGround.jpg" />
+    <Content Include="Assets\BackGround\心理视听.jpg" />
+    <Content Include="Assets\Images\Frame.png" />
+    <Content Include="Assets\Images\IllusionPic\01.jpg" />
+    <Content Include="Assets\Images\IllusionPic\02.png" />
+    <Content Include="Assets\Images\IllusionPic\03.jpg" />
+    <Content Include="Assets\Images\IllusionPic\04-.png" />
+    <Content Include="Assets\Images\IllusionPic\05-.png" />
+    <Content Include="Assets\Images\IllusionPic\06-.png" />
+    <Content Include="Assets\Images\IllusionPic\07-.png" />
+    <Content Include="Assets\Images\IllusionPic\1.png" />
+    <Content Include="Assets\Images\IllusionPic\2.png" />
+    <Content Include="Assets\Images\IllusionPic\3.png" />
+    <Content Include="Assets\Images\IllusionPic\4.png" />
+    <Content Include="Assets\Images\IllusionPic\5.png" />
+    <Content Include="Assets\Images\Nature\AVI\1.avi" />
+    <Content Include="Assets\Images\Nature\AVI\10.avi" />
+    <Content Include="Assets\Images\Nature\AVI\13.avi" />
+    <Content Include="Assets\Images\Nature\AVI\14.avi" />
+    <Content Include="Assets\Images\Nature\AVI\17.avi" />
+    <Content Include="Assets\Images\Nature\AVI\18.avi" />
+    <Content Include="Assets\Images\Nature\AVI\2.avi" />
+    <Content Include="Assets\Images\Nature\AVI\25.avi" />
+    <Content Include="Assets\Images\Nature\AVI\3.avi" />
+    <Content Include="Assets\Images\Nature\AVI\32.avi" />
+    <Content Include="Assets\Images\Nature\AVI\34.avi" />
+    <Content Include="Assets\Images\Nature\AVI\35.avi" />
+    <Content Include="Assets\Images\Nature\AVI\38.avi" />
+    <Content Include="Assets\Images\Nature\AVI\4.avi" />
+    <Content Include="Assets\Images\Nature\AVI\46.avi" />
+    <Content Include="Assets\Images\Nature\AVI\56.avi" />
+    <Content Include="Assets\Images\Nature\AVI\7.avi" />
+    <Content Include="Assets\Images\Nature\AVI\8.avi" />
+    <Content Include="Assets\Images\Nature\AVI\84.avi" />
+    <Content Include="Assets\Images\Nature\AVI\87.avi" />
+    <Content Include="Assets\Images\Nature\AVI\88.avi" />
+    <Content Include="Assets\Images\Nature\AVI\95.avi" />
+    <Content Include="Assets\Images\Nature\GIF\1.gif" />
+    <Content Include="Assets\Images\Nature\GIF\10.gif" />
+    <Content Include="Assets\Images\Nature\GIF\13.gif" />
+    <Content Include="Assets\Images\Nature\GIF\14.gif" />
+    <Content Include="Assets\Images\Nature\GIF\17.gif" />
+    <Content Include="Assets\Images\Nature\GIF\18.gif" />
+    <Content Include="Assets\Images\Nature\GIF\2.gif" />
+    <Content Include="Assets\Images\Nature\GIF\25.gif" />
+    <Content Include="Assets\Images\Nature\GIF\3.gif" />
+    <Content Include="Assets\Images\Nature\GIF\32.gif" />
+    <Content Include="Assets\Images\Nature\GIF\34.gif" />
+    <Content Include="Assets\Images\Nature\GIF\35.gif" />
+    <Content Include="Assets\Images\Nature\GIF\38.gif" />
+    <Content Include="Assets\Images\Nature\GIF\4.gif" />
+    <Content Include="Assets\Images\Nature\GIF\46.gif" />
+    <Content Include="Assets\Images\Nature\GIF\56.gif" />
+    <Content Include="Assets\Images\Nature\GIF\7.gif" />
+    <Content Include="Assets\Images\Nature\GIF\8.gif" />
+    <Content Include="Assets\Images\Nature\GIF\84.gif" />
+    <Content Include="Assets\Images\Nature\GIF\87.gif" />
+    <Content Include="Assets\Images\Nature\GIF\88.gif" />
+    <Content Include="Assets\Images\Nature\GIF\95.gif" />
+    <Content Include="Assets\Images\Nature\AVI\中国水墨画-4.avi" />
+    <Content Include="Assets\Images\Nature\AVI\中国水墨画-5.avi" />
+    <Content Include="Assets\Images\Nature\AVI\中国水墨画-6.avi" />
+    <Content Include="Assets\Images\Nature\AVI\中国水墨画-7.avi" />
+    <Content Include="Assets\Images\Nature\AVI\桃园春色-11.avi" />
+    <Content Include="Assets\Images\Nature\AVI\爱恋花-1.avi" />
+    <Content Include="Assets\Images\Nature\AVI\爱恋花-2.avi" />
+    <Content Include="Assets\Images\Nature\AVI\群鸟-12.avi" />
+    <Content Include="Assets\Images\Nature\AVI\蝴蝶树-10.avi" />
+    <Content Include="Assets\Images\Nature\AVI\诗情画意-3.avi" />
+    <Content Include="Assets\Images\Nature\AVI\雪域-9.avi" />
+    <Content Include="Assets\Images\Nature\AVI\魅力春夏-8.avi" />
+    <Content Include="Assets\Images\Nature\JPEG\中国水墨画-4.jpg" />
+    <Content Include="Assets\Images\Nature\JPEG\中国水墨画-5.jpg" />
+    <Content Include="Assets\Images\Nature\JPEG\中国水墨画-6.jpg" />
+    <Content Include="Assets\Images\Nature\JPEG\中国水墨画-7.jpg" />
+    <Content Include="Assets\Images\Nature\JPEG\桃源春色.jpg" />
+    <Content Include="Assets\Images\Nature\JPEG\爱恋花-1.jpg" />
+    <Content Include="Assets\Images\Nature\JPEG\爱恋花-2.jpg" />
+    <Content Include="Assets\Images\Nature\JPEG\群鸟-12.jpg" />
+    <Content Include="Assets\Images\Nature\JPEG\蝴蝶树-10.jpg" />
+    <Content Include="Assets\Images\Nature\JPEG\诗情画意-3.jpg" />
+    <Content Include="Assets\Images\Nature\JPEG\雪域-9.jpg" />
+    <Content Include="Assets\Images\Nature\JPEG\魅力春夏-8.jpg" />
+    <Content Include="Assets\Images\PunPic\01.JPG" />
+    <Content Include="Assets\Images\PunPic\02.jpg" />
+    <Content Include="Assets\Images\PunPic\035.jpg" />
+    <Content Include="Assets\Images\PunPic\04.jpg" />
+    <Content Include="Assets\Images\PunPic\05.jpg" />
+    <Content Include="Assets\Images\PunPic\06.jpg" />
+    <Content Include="Assets\Images\PunPic\081.jpg" />
+    <Content Include="Assets\Images\PunPic\084.jpg" />
+    <Content Include="Assets\Images\PunPic\086.jpg" />
+    <Content Include="Assets\Images\PunPic\097.jpg" />
+    <Content Include="Assets\Images\PunPic\098.jpg" />
+    <Content Include="Assets\Images\α波-六错觉图背景音乐.mp3" />
+    <Content Include="Assets\Images\α波-四双关图背景音乐.mp3" />
+    <Content Include="Assets\Images\双关图2.png" />
+    <Content Include="Assets\Images\山水情2.jpg" />
+    <Content Include="Assets\Images\错觉图2.png" />
+    <Content Include="Assets\Interview\06.01.09.为什么不理我.avi" />
+    <Content Include="Assets\Interview\06.01.27.我的肚子怕考试.avi" />
+    <Content Include="Assets\Interview\06.02.14.我被贴了“傻”标签.avi" />
+    <Content Include="Assets\Interview\06.03.03.直面妒嫉.avi" />
+    <Content Include="Assets\Interview\06.03.23.如何灭掉心中的火.avi" />
+    <Content Include="Assets\Interview\06.05.11.惧怕领导的背后.avi" />
+    <Content Include="Assets\Interview\06.05.16.挑战疲劳期.avi" />
+    <Content Include="Assets\Interview\06.10.01.从心开始.avi" />
+    <Content Include="Assets\Interview\06.10.02.发现快乐.avi" />
+    <Content Include="Assets\Interview\07.07.01.重拾自信.avi" />
+    <Content Include="Assets\Interview\07.10.02.冲突不可怕.avi" />
+    <Content Include="Assets\Interview\09.08.26.心理访谈.俞敏洪：不一样的选择（上）.avi" />
+    <Content Include="Assets\Interview\09.08.27.心理访谈.俞敏洪：不一样的选择（下）.avi" />
+    <Content Include="Assets\Interview\09.09.01.心理访谈.袁岳：坚持做对的事（上）.avi" />
+    <Content Include="Assets\Interview\09.09.02.心理访谈.袁岳：坚持做对的事（下）.avi" />
+    <Content Include="Assets\Interview\10.02.20.心理访谈.他是谁.和他一起寻找性格的秘密.雷敏.侠女柔情.avi" />
+    <Content Include="Assets\Interview\10.02.21.心理访谈.他是谁.和他一起寻找性格的秘密.雷敏.英雄本色.avi" />
+    <Content Include="Assets\Logo.scale-100.png" />
+    <Content Include="Assets\Movie\丁晓兵：我的左手-压缩.avi" />
+    <Content Include="Assets\Movie\冲出亚马逊-压缩.avi" />
+    <Content Include="Assets\Movie\怒海潜将.avi" />
+    <Content Include="Assets\Movie\战马.avi" />
+    <Content Include="Assets\Movie\阿甘正传\阿甘正传1.avi" />
+    <Content Include="Assets\Movie\阿甘正传\阿甘正传2.avi" />
+    <Content Include="Assets\Movie\阿甘正传\阿甘正传3.avi" />
+    <Content Include="Assets\Music\2-8（2）语音-请选择.mp3" />
+    <Content Include="Assets\Music\7dd98d1001e939013264d0a87aec54e737d196c5.jpg" />
+    <Content Include="Assets\Music\Admiration\Music\1我爱祖国的蓝天.mp3" />
+    <Content Include="Assets\Music\Admiration\Music\10绿军装的梦.mp3" />
+    <Content Include="Assets\Music\Admiration\Music\11说句心里话.mp3" />
+    <Content Include="Assets\Music\Admiration\Music\12当你的秀发拂过我的钢枪.mp3" />
+    <Content Include="Assets\Music\Admiration\Music\13好姑娘等着我.mp3" />
+    <Content Include="Assets\Music\Admiration\Music\14女兵谣.mp3" />
+    <Content Include="Assets\Music\Admiration\Music\15男子汉去飞行.mp3" />
+    <Content Include="Assets\Music\Admiration\Music\16战友还记得吗.mp3" />
+    <Content Include="Assets\Music\Admiration\Music\17我若牺牲在沙场.mp3" />
+    <Content Include="Assets\Music\Admiration\Music\18新兵日记.mp3" />
+    <Content Include="Assets\Music\Admiration\Music\19好男儿就是要当兵.mp3" />
+    <Content Include="Assets\Music\Admiration\Music\2军港之夜.mp3" />
+    <Content Include="Assets\Music\Admiration\Music\20从汶川回来的排长.mp3" />
+    <Content Include="Assets\Music\Admiration\Music\21激情燃烧的岁月.avi" />
+    <Content Include="Assets\Music\Admiration\Music\3忠诚卫士歌.mp3" />
+    <Content Include="Assets\Music\Admiration\Music\4爱在远方.mp3" />
+    <Content Include="Assets\Music\Admiration\Music\5飞翔的刺刀.mp3" />
+    <Content Include="Assets\Music\Admiration\Music\6中国人民解放军军歌.mp3" />
+    <Content Include="Assets\Music\Admiration\Music\7当那一天来临.mp3" />
+    <Content Include="Assets\Music\Admiration\Music\8爱国奉献歌.mp3" />
+    <Content Include="Assets\Music\Admiration\Music\9军中绿花.mp3" />
+    <Content Include="Assets\Music\Admiration\Pic\1.jpg" />
+    <Content Include="Assets\Music\Admiration\Pic\10.jpg" />
+    <Content Include="Assets\Music\Admiration\Pic\11.jpg" />
+    <Content Include="Assets\Music\Admiration\Pic\12.jpg" />
+    <Content Include="Assets\Music\Admiration\Pic\13.jpg" />
+    <Content Include="Assets\Music\Admiration\Pic\14.jpg" />
+    <Content Include="Assets\Music\Admiration\Pic\15.jpg" />
+    <Content Include="Assets\Music\Admiration\Pic\16.jpg" />
+    <Content Include="Assets\Music\Admiration\Pic\17.jpg" />
+    <Content Include="Assets\Music\Admiration\Pic\18.jpg" />
+    <Content Include="Assets\Music\Admiration\Pic\19.png" />
+    <Content Include="Assets\Music\Admiration\Pic\2.jpg" />
+    <Content Include="Assets\Music\Admiration\Pic\20.jpg" />
+    <Content Include="Assets\Music\Admiration\Pic\3.jpg" />
+    <Content Include="Assets\Music\Admiration\Pic\4.jpg" />
+    <Content Include="Assets\Music\Admiration\Pic\5.jpg" />
+    <Content Include="Assets\Music\Admiration\Pic\6.jpg" />
+    <Content Include="Assets\Music\Admiration\Pic\7.jpg" />
+    <Content Include="Assets\Music\Admiration\Pic\8.jpg" />
+    <Content Include="Assets\Music\Admiration\Pic\9.png" />
+    <Content Include="Assets\Music\Admiration\Pic\MovieLogo.png" />
+    <Content Include="Assets\Music\Destress\01.gif" />
+    <Content Include="Assets\Music\Destress\01.mp4" />
+    <Content Include="Assets\Music\Destress\02.gif" />
+    <Content Include="Assets\Music\Destress\02.mp4" />
+    <Content Include="Assets\Music\Destress\02.自我放松术%28有指导语）.mp3" />
+    <Content Include="Assets\Music\Destress\03.gif" />
+    <Content Include="Assets\Music\Destress\03.mp4" />
+    <Content Include="Assets\Music\Destress\04.羽毛孔雀月色-恬然入梦（曲）.avi" />
+    <Content Include="Assets\Music\Destress\05. 唯美夜晚月亮-随想.avi" />
+    <Content Include="Assets\Music\Destress\04.png" />
+    <Content Include="Assets\Music\Destress\05.png" />
+    <Content Include="Assets\Music\Destress\11.mp3" />
+    <Content Include="Assets\Music\Destress\12.mp3" />
+    <Content Include="Assets\Music\Destress\2-11指导语.mp3" />
+    <Content Include="Assets\Music\Destress\A.平静制怒1.mp3" />
+    <Content Include="Assets\Music\Destress\A.平静制怒2.mp3" />
+    <Content Include="Assets\Music\Hypnosis\01.gif" />
+    <Content Include="Assets\Music\Hypnosis\01.mp4" />
+    <Content Include="Assets\Music\Hypnosis\01海浪之梦.mp3" />
+    <Content Include="Assets\Music\Hypnosis\02.gif" />
+    <Content Include="Assets\Music\Hypnosis\02.mp4" />
+    <Content Include="Assets\Music\Hypnosis\02草原之梦.mp3" />
+    <Content Include="Assets\Music\Hypnosis\03.gif" />
+    <Content Include="Assets\Music\Hypnosis\03.mp4" />
+    <Content Include="Assets\Music\Hypnosis\03鸟语之梦.mp3" />
+    <Content Include="Assets\Music\Hypnosis\04.gif" />
+    <Content Include="Assets\Music\Hypnosis\04.mp4" />
+    <Content Include="Assets\Music\Hypnosis\04月夜之梦.mp3" />
+    <Content Include="Assets\Music\Hypnosis\催眠指导语（男声）2=.mp3" />
+    <Content Include="Assets\Music\Motivation\引吭高歌.png" />
+    <Content Include="Assets\Music\Motivation\请您欣赏.png" />
+    <Content Include="Assets\Music\SingAloud\10好姑娘等着我_刘一鸣.avi" />
+    <Content Include="Assets\Music\SingAloud\11战友还记得吗_小曾.avi" />
+    <Content Include="Assets\Music\SingAloud\12好男儿就是要当兵_刘和刚.avi" />
+    <Content Include="Assets\Music\SingAloud\13东西南北兵_宋祖英.avi" />
+    <Content Include="Assets\Music\SingAloud\14小白杨.avi" />
+    <Content Include="Assets\Music\SingAloud\15军中姐妹_张莉莉&amp;张薇薇.avi" />
+    <Content Include="Assets\Music\SingAloud\16女兵十八_白雪.avi" />
+    <Content Include="Assets\Music\SingAloud\17青藏高原_李娜.avi" />
+    <Content Include="Assets\Music\SingAloud\18十五的月亮.avi" />
+    <Content Include="Assets\Music\SingAloud\19天路_韩红.avi" />
+    <Content Include="Assets\Music\SingAloud\1我爱祖国的蓝天_佚名.avi" />
+    <Content Include="Assets\Music\SingAloud\20潇洒女兵_女兵三人组.avi" />
+    <Content Include="Assets\Music\SingAloud\21咱当兵的人_佚名.avi" />
+    <Content Include="Assets\Music\SingAloud\22战士第二故乡_李双江.avi" />
+    <Content Include="Assets\Music\SingAloud\2军港之夜_苏小明.avi" />
+    <Content Include="Assets\Music\SingAloud\3中国人民解放军进行曲_佚名.avi" />
+    <Content Include="Assets\Music\SingAloud\4当那一天来临_陈小涛.avi" />
+    <Content Include="Assets\Music\SingAloud\5爱国奉献歌.avi" />
+    <Content Include="Assets\Music\SingAloud\6军中绿花_小曾.avi" />
+    <Content Include="Assets\Music\SingAloud\7绿军装的梦.avi" />
+    <Content Include="Assets\Music\SingAloud\8说句心里话.avi" />
+    <Content Include="Assets\Music\SingAloud\9当你的秀发拂过我的钢枪_高歌.avi" />
+    <Content Include="Assets\Music\SingAloud\MovieLogo.png" />
+    <Content Include="Assets\SmallLogo.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Assets\Video\压力管理与军人心理健康.avi" />
+    <Content Include="Assets\Video\有效调节压力的方法.avi" />
+    <Content Include="SampleData\Images\110Banana.png" />
+    <Content Include="SampleData\Images\110Lemon.png" />
+    <Content Include="SampleData\Images\110Mint.png" />
+    <Content Include="SampleData\Images\110Orange.png" />
+    <Content Include="SampleData\Images\110Strawberry.png" />
+    <Content Include="SampleData\Images\110Vanilla.png" />
+    <Content Include="SampleData\Images\220Strawberry.png" />
+    <Content Include="SampleData\Images\60Banana.png" />
+    <Content Include="SampleData\Images\60Lemon.png" />
+    <Content Include="SampleData\Images\60Mail01.png" />
+    <Content Include="SampleData\Images\60Mail02.png" />
+    <Content Include="SampleData\Images\60Mail03.png" />
+    <Content Include="SampleData\Images\60Mint.png" />
+    <Content Include="SampleData\Images\60Orange.png" />
+    <Content Include="SampleData\Images\60SauceCaramel.png" />
+    <Content Include="SampleData\Images\60SauceChocolate.png" />
+    <Content Include="SampleData\Images\60SauceStrawberry.png" />
+    <Content Include="SampleData\Images\60SprinklesChocolate.png" />
+    <Content Include="SampleData\Images\60SprinklesRainbow.png" />
+    <Content Include="SampleData\Images\60SprinklesVanilla.png" />
+    <Content Include="SampleData\Images\60Strawberry.png" />
+    <Content Include="SampleData\Images\60Vanilla.png" />
+    <Content Include="SampleData\Images\banana.jpg" />
+    <Content Include="SampleData\Images\mint.jpg" />
+    <Content Include="SampleData\Images\msg.png" />
+    <Content Include="SampleData\Images\orange.jpg" />
+    <Content Include="SampleData\Images\strawberry.jpg" />
+    <Content Include="SampleData\Images\vanilla.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="AudioVisual\Article.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AudioVisual\AudioVisualMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AudioVisual\Interview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AudioVisual\Movie.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AudioVisual\Video.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Music\SingAloud.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Music\MusicDestress.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Music\Admiration.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Music\MusicHypnosis.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Music\Motivation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Music\MusicMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pictures\Illusion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pictures\PicMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pictures\Pun.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Start.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Main.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AudioVisual\Settings\AudioSettings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AudioVisual\Settings\HelpSettings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AudioVisual\Settings\PrivacySettings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AudioVisual\Settings\VideoSettings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="User\ChangePassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User\User_info.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pictures\Nature.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User\Register.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User\Test\Self_test.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User\Test\test_e.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="User\Test\test_d.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="User\Test\test_c.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="User\Test\test_b.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="User\Test\test_a.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Microsoft.VCLibs, version=12.0">
+      <Name>Microsoft Visual C++ 2013 Runtime Package for Windows</Name>
+    </SDKReference>
+    <SDKReference Include="SQLite.WinRT81, Version=3.8.11.1">
+      <Name>SQLite for Windows Runtime %28Windows 8.1%29</Name>
+    </SDKReference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
+    <VisualStudioVersion>12.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

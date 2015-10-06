@@ -1,0 +1,64 @@
+﻿<Page
+    x:Class="Project_try.Pictures.PicMain"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Project_try.Pictures"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="#FFCDCDCD">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <MediaElement AutoPlay="True" Source="ms-appx:///Assets/BackGround/2-2-3.mp3" />
+            <Grid x:ConnectionId='2' x:Name="Nature" Grid.Row="0" Margin="10,10,10,10"                                                                                >
+                <Image Source="ms-appx:///Assets/Images/Frame.png" Margin="430,0"  />
+                <Image Source="ms-appx:///Assets/Images/山水情2.jpg" Margin="478,45,504,69" Stretch="Fill"  />
+                <Rectangle x:Name="R1" Margin="430,0,461,24" Fill="Black"  Opacity="0.3"/>
+                <Grid.Transitions>
+                    <TransitionCollection>
+                        <EntranceThemeTransition FromVerticalOffset="50" FromHorizontalOffset="0"/>
+                    </TransitionCollection>
+                </Grid.Transitions>
+            </Grid>
+            <Grid  Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid x:ConnectionId='3' x:Name="Pun" Grid.Column="0" Margin="100,10,100,10"                                                                               >
+                    <Image Source="ms-appx:///Assets/Images/Frame.png" />
+                    <Image Source="ms-appx:///Assets/Images/双关图2.png" Margin="50,45,72,67" Stretch="Fill"/>
+                    <Rectangle x:Name="R2" Margin="0,0,28,24" Fill="Black"  Opacity="0.3"/>
+                    <Grid.Transitions>
+                        <TransitionCollection>
+                            <EntranceThemeTransition FromVerticalOffset="70" FromHorizontalOffset="0"/>
+                        </TransitionCollection>
+                    </Grid.Transitions>
+                </Grid>
+                <Grid x:ConnectionId='4' x:Name="Illusion" Grid.Column="1" Margin="100,10,100,10"                                                                               >
+                    <Image  Source="ms-appx:///Assets/Images/Frame.png"/>
+                    <Image  Source="ms-appx:///Assets/Images/错觉图2.png" Stretch="Fill" Margin="50,45,80,67"/>
+                    <Rectangle  x:Name="R3" Margin="0,0,28,24" Fill="Black"  Opacity="0.3"/>
+                    <Grid.Transitions>
+                        <TransitionCollection>
+                            <EntranceThemeTransition FromVerticalOffset="90" FromHorizontalOffset="0"/>
+                        </TransitionCollection>
+                    </Grid.Transitions>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Button x:ConnectionId='1' x:Name="backButton" Margin="59,59,0,0" Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
+        	Style="{StaticResource NavigationBackButtonNormalStyle}"
+        	VerticalAlignment="Top"
+        	AutomationProperties.Name="Back"
+        	AutomationProperties.AutomationId="BackButton"
+        	AutomationProperties.ItemType="Navigation Button" Grid.Column="1" 
+                                        
+                />
+    </Grid>
+</Page>
+

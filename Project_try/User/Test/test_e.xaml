@@ -1,0 +1,42 @@
+﻿<Page
+    x:Class="Project_try.test_e"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Project_try"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" >
+        <TextBlock Text="测测你的性格基因与生命路线" FontSize="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,50,0,0"/>
+
+        <TextBlock Name="question" Text="" Margin="30,0,0,170" FontSize="30" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <StackPanel x:Name="question_container" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30,380,0,334" Orientation="Horizontal" Width="500">
+            <RadioButton Name="A" Content="非常同意" Margin="0,10,0,0" FontSize="30" Checked="A_Checked" HorizontalAlignment="Left"/>
+            <RadioButton x:Name="B" Content="同意" Margin="100,10,0,0" FontSize="30" Checked="B_Checked" HorizontalAlignment="Right"/>
+        </StackPanel>
+
+        <Popup x:Name="result_popup" Width="800" Height="300" IsLightDismissEnabled="True">
+            <Popup.ChildTransitions>
+                <TransitionCollection>
+                    <EntranceThemeTransition/>
+                </TransitionCollection>
+            </Popup.ChildTransitions>
+            <Grid Width="800" Height="300" Background="#FF468DE2">
+                <TextBlock Text="1、得分" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,5,0,0"/>
+                <TextBlock Name="chara_gene" Text="" FontSize="15" TextWrapping="Wrap" MaxWidth="350" 
+                           HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,30,0,0"/>
+                <TextBlock Text="2、得分评价" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="120,5,0,0" />
+                <TextBlock Name="life_route" Text="" FontSize="15" TextWrapping="Wrap" MaxWidth="350" 
+                           HorizontalAlignment="Center" VerticalAlignment="Top" Margin="350,30,0,0"/>
+                <Button HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,30,30" Content="返回" Click="BackButton_Click"/>
+            </Grid>
+        </Popup>
+        <AppBarButton HorizontalAlignment="Right" Label="返回" VerticalAlignment="Bottom" Margin="0,0,50,50" Icon="Back" Click="BackButton_Click"/>
+        <StackPanel x:Name="question_container_Copy" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="530,380,0,334" Orientation="Horizontal" Width="500">
+            <RadioButton x:Name="C" Content="不同意" Margin="0,10,0,0" FontSize="30" Checked="C_Checked" HorizontalAlignment="Left"/>
+            <RadioButton x:Name="D" Content="非常不同意" Margin="100,10,0,0" FontSize="30" Checked="D_Checked" HorizontalAlignment="Right"/>
+        </StackPanel>
+
+    </Grid>
+</Page>

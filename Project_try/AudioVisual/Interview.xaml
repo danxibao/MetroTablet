@@ -1,0 +1,326 @@
+﻿<Page
+    x:Name="pageRoot"
+    x:Class="Project_try.AudioVisual.Interview"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Project_try.AudioVisual"
+    xmlns:common="using:Project_try.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Loaded="PageRoot_Loaded">
+
+    <Page.Resources>
+        <!-- Collection of items displayed by this page -->
+        <CollectionViewSource
+        x:Name="itemsViewSource"
+        Source="{Binding Items}"/>
+        <!--Animation to slowly fade the text -->
+        <Storyboard x:Name="textFade">
+            <DoubleAnimationUsingKeyFrames
+                             Storyboard.TargetName="txtDisplay" 
+                             Storyboard.TargetProperty="Opacity">
+                <LinearDoubleKeyFrame Value=".75" KeyTime="0:0:0" />
+                <LinearDoubleKeyFrame Value=".75" KeyTime="0:0:1" />
+                <LinearDoubleKeyFrame Value="0" KeyTime="0:0:2" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Page.Resources>
+
+    <!--
+        This grid acts as a root panel for the page that defines two rows:
+        * Row 0 contains the back button and page title
+        * Row 1 contains the rest of the page layout
+    -->
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/AudioVisual/BackCanvas.jpg"/>
+        </Grid.Background>
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Name="primaryColumn" Width="360"/>
+            <ColumnDefinition x:Name="secondaryColumn" Width="*"/>
+        </Grid.ColumnDefinitions>
+        <!--TextBlock to display messages to the user. -->
+        <TextBlock Grid.ColumnSpan="2" Grid.RowSpan="2" Name="txtDisplay" Width="300" Height="250" FontSize="40" TextAlignment="Center" Opacity=".5" FontWeight="Bold" />
+
+        <!-- Back button and page title -->
+        <Grid x:Name="titlePanel">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="backButton" Margin="39,59,39,0" Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
+                        Style="{StaticResource NavigationBackButtonNormalStyle}"
+                        VerticalAlignment="Top"
+                        AutomationProperties.Name="Back"
+                        AutomationProperties.AutomationId="BackButton"
+                        AutomationProperties.ItemType="Navigation Button"/>
+            <TextBlock x:Name="pageTitle" Text="访谈列表" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
+                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,0,40" FontFamily="Microsoft YaHei"/>
+        </Grid>
+
+        <!-- Vertical scrolling item list -->
+        <ListView
+            x:Name="itemListView"
+            AutomationProperties.AutomationId="ItemsListView"
+            AutomationProperties.Name="Items"
+            TabIndex="1"
+            Grid.Row="1"
+            Padding="120,0,0,60"
+            ItemsSource="{Binding Source={StaticResource itemsViewSource}}"
+            IsSwipeEnabled="False"
+            SelectionChanged="itemListView_SelectionChanged">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="6">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Background="{ThemeResource ListViewItemPlaceholderBackgroundThemeBrush}" Width="60" Height="60">
+                            <Image Source="{Binding Image}" Stretch="Fill" AutomationProperties.Name="{Binding Title}"/>
+                        </Border>
+                        <StackPanel Grid.Column="1" Margin="10,0,0,0">
+                            <TextBlock Text="{Binding Title}" Style="{StaticResource TitleTextBlockStyle}" TextWrapping="NoWrap" MaxHeight="40"/>
+                            <TextBlock Text="{Binding Subtitle}" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="NoWrap"/>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="FrameworkElement">
+                    <Setter Property="Margin" Value="0,0,0,10"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+
+
+        <!-- Details for selected item -->
+        <ScrollViewer
+            x:Name="itemDetail"
+            AutomationProperties.AutomationId="ItemDetailScrollViewer"
+            Grid.Column="1"
+            Grid.RowSpan="2"
+            Padding="60,0,66,0"
+            DataContext="{Binding SelectedItem, ElementName=itemListView}"
+            HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto"
+            ScrollViewer.HorizontalScrollMode="Enabled" ScrollViewer.VerticalScrollMode="Enabled"
+            ScrollViewer.ZoomMode="Enabled"
+            >
+
+            <Grid x:Name="itemDetailGrid" Margin="0,60,0,50">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel x:Name="itemDetailTitlePanel" Grid.Row="0">
+                    <TextBlock x:Name="itemTitle" Margin="0,-10,0,0" Text="{Binding Title}" Style="{StaticResource SubheaderTextBlockStyle}"/>
+                    <TextBlock x:Name="itemSubtitle" Margin="0,0,0,20" Text="{Binding Subtitle}" Style="{StaticResource SubtitleTextBlockStyle}"/>
+                </StackPanel>
+                <Grid Grid.Row="1" Name="MediaContainer" Loaded="MediaContainer_Loaded">
+                    <MediaElement x:Name="media"
+                              Margin="0,0,0,20"
+                              Source="{Binding Source}"
+                                  AreTransportControlsEnabled="True"
+                                  MediaOpened="Media_MediaOpened"
+                                  MediaEnded="Media_MediaEnded"
+                                  MediaFailed="Media_MediaFailed"
+                                  CurrentStateChanged="Media_CurrentStateChanged"
+                                  AutoPlay="False" 
+                                  IsTapEnabled="True" 
+                                  AudioCategory="BackgroundCapableMedia" 
+                                  RateChanged="Media_RateChanged" />
+                </Grid>
+
+            </Grid>
+        </ScrollViewer>
+
+        <VisualStateManager.VisualStateGroups>
+
+            <!-- Visual states reflect the application's view state -->
+            <VisualStateGroup x:Name="ViewStates">
+                <VisualState x:Name="PrimaryView" />
+                <VisualState x:Name="SinglePane">
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="primaryColumn" Storyboard.TargetProperty="Width">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="*"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="secondaryColumn" Storyboard.TargetProperty="Width">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="0"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="itemDetail" Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="itemListView" Storyboard.TargetProperty="Padding">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="120,0,90,60"/>
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+                <!--
+                    When an item is selected and only one pane is shown the details display requires more extensive changes:
+                     * Hide the master list and the column it was in
+                     * Move item details down a row to make room for the title
+                     * Move the title directly above the details
+                     * Adjust padding for details
+                 -->
+                <VisualState x:Name="SinglePane_Detail">
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="primaryColumn" Storyboard.TargetProperty="Width">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="0"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="itemListView" Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="itemDetail" Storyboard.TargetProperty="(Grid.Row)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="1"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="itemDetail" Storyboard.TargetProperty="(Grid.RowSpan)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="1"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="titlePanel" Storyboard.TargetProperty="(Grid.Column)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="1"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="itemDetailGrid" Storyboard.TargetProperty="Margin">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="0,0,0,60"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="itemDetail" Storyboard.TargetProperty="Padding">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="120,0,90,0"/>
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+    </Grid>
+    <!--The Top AppBar -->
+    <Page.TopAppBar>
+        <AppBar x:Name="topAppBar"  >
+            <AppBar.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3D4A59"/>
+                    <GradientStop Color="#FF303A44" Offset="1"/>
+                    <GradientStop Color="#FF1C2329" Offset="0.723"/>
+                </LinearGradientBrush>
+            </AppBar.Background>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!--Column="0"-->
+                <StackPanel Orientation="Horizontal"  Grid.Column="0">
+                    <StackPanel x:Name="stackPanelTopAppBarLeft" HorizontalAlignment="Left" Orientation="Horizontal">
+                        <AppBarButton x:Uid="appBarButtonBack"  Icon="Back"  HorizontalAlignment="Right" Grid.Column="1" Click="BackButton_Click" />
+
+                    </StackPanel>
+                </StackPanel>
+
+                <!--Column="1"-->
+                
+            </Grid>
+        </AppBar>
+    </Page.TopAppBar>
+
+    <!--The Bottom AppBar -->
+    <Page.BottomAppBar>
+        <!-- Text fields such as AppBarButton.Label and ToolTipService.ToolTip are defined in Resources.resw -->
+        <!-- Text fields are enabled on the objects below with x:Vid="" -->
+        <AppBar x:Name="bottomAppBar" Opened="BottomAppBar_Opened" Closed="BottomAppBar_Closed">
+            <AppBar.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF303A44"/>
+                    <GradientStop Color="#FF3D4A59" Offset="1"/>
+                    <GradientStop Color="#FF1C2329" Offset="0.872"/>
+                </LinearGradientBrush>
+            </AppBar.Background>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Slider for the custom timeline bar for the MediaElement -->
+                <Slider Name="timelineSlider" />
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1">
+                    <!-- Left side of Appbar -->
+                    <StackPanel x:Name="stackPanelAppbarLeft" Orientation="Horizontal" HorizontalAlignment="Right">
+                        <AppBarButton x:Uid="appBarButtonRewind" x:Name="appBarButtonRewind" Click="Rewind_Click" Icon="Back"/>
+                        <AppBarButton x:Uid="appBarButtonFastForward" x:Name="appBarFastForward" Click="Forward_Click" Icon="Forward"/>
+                        <AppBarButton x:Uid="appBarButtonPrevious" Icon="Previous" Click="Previous_Click"/>
+                        <AppBarButton x:Uid="appBarButtonNext" Icon="Next" Click="Next_Click"/>
+                    </StackPanel>
+
+                    <!-- Center of Appbar -->
+                    <StackPanel x:Name="stackPanelAppbarCenter" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <AppBarButton x:Uid="appBarButtonPlay" x:Name="appBarButtonPlay" Icon="Play" Click="PlayPause_Click" />
+                        <AppBarButton x:Uid="appBarButtonStop"  x:Name="appBarButtonStop" Icon="Stop" Click="Stop_Click" IsCompact="False"/>
+                    </StackPanel>
+
+                    <!-- Right side of AppBar -->
+                    <StackPanel x:Name="stackPanelAppbarRight" Orientation="Horizontal" HorizontalAlignment="Left">
+                        <AppBarButton x:Uid="appBarButtonVolume" Icon="Volume">
+                            <AppBarButton.Flyout>
+                                <Flyout>
+                                    <StackPanel Orientation="Horizontal">
+
+                                        <Slider x:Name="volumeSlider" 
+                                            Orientation="Vertical" 
+                                            StepFrequency=".01"
+                                            Maximum="1.0"
+                                            Minimum="0.0"
+                                            Height="100" Value="{Binding Path=media.Volume, Mode=TwoWay}" Header="音量"  />
+
+                                        <AppBarToggleButton x:Uid="appBarButtonMute" Icon="Mute" Click="Mute_Click" />
+
+                                        <Slider x:Name="balanceSlider"
+                                            Orientation="Horizontal" 
+                                            StepFrequency=".01"
+                                            Maximum="1.0"
+                                            Minimum="-1.0"
+                                            Margin="0,0,10,0"
+                                            Width="100" Value="{Binding Path=media.Balance, Mode=TwoWay}" HorizontalAlignment="Center" Header="平衡" />
+
+                                        <ComboBox x:Uid="audioTracksComboBox" 
+                                              Name="audioTracksComboBox" 
+                                              Height="60" Width="110" 
+                                              SelectionChanged="AudioTracksComboBox_SelectionChanged" Margin="5" VerticalAlignment="Top" />
+                                    </StackPanel>
+                                </Flyout>
+                            </AppBarButton.Flyout>
+                        </AppBarButton>
+                        <AppBarButton x:Uid="appBarButtonImageOptions" Icon="Pictures" >
+                            <AppBarButton.Flyout>
+                                <Flyout>
+                                    <StackPanel Orientation="Horizontal">
+                                        <AppBarButton x:Uid="appBarButtonPictureSize" Icon="Pictures" Click="PictureSize_Click" />
+                                        <AppBarButton x:Uid="appbarButtonZoom" Icon="ZoomIn" Click="Zoom_Click" />
+                                        <AppBarToggleButton x:Uid="appBarButtonFullWindow" Icon="FullScreen"  Click="FullWindow_Click"  />
+                                    </StackPanel>
+                                </Flyout>
+                            </AppBarButton.Flyout>
+                        </AppBarButton>
+                        <AppBarToggleButton x:Uid="appBarButtonRepeat" Icon="RepeatAll" Click="Repeat_Click">
+                            <AppBarToggleButton.Transitions>
+                                <TransitionCollection>
+                                    <EntranceThemeTransition />
+                                </TransitionCollection>
+                            </AppBarToggleButton.Transitions>
+                        </AppBarToggleButton>
+                    </StackPanel>
+
+                </StackPanel>
+
+            </Grid>
+        </AppBar>
+    </Page.BottomAppBar>
+</Page>
