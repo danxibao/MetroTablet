@@ -102,7 +102,7 @@ namespace Project_try.AudioVisual
             }
             else
             {
-                itemListView.SelectedIndex = 0;
+                itemListView_SelectedIndex = 0;
             }
             // TODO: Assign a bindable group to Me.DefaultViewModel("Group")
             // TODO: Assign a collection of bindable items to Me.DefaultViewModel("Items")

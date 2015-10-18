@@ -53,11 +53,11 @@
                         <TextBlock x:Name="MediaText" HorizontalAlignment="Center" Text="心理视听" VerticalAlignment="Center" 
         		FontSize="60" FontFamily="Microsoft YaHei" TextWrapping="Wrap" TextAlignment="Center" Margin="0,0,0,0" Foreground="#FF131416" 
                                    >
-                        <TextBlock.Transitions>
-                            <TransitionCollection>
-                                <EntranceThemeTransition/>
-                            </TransitionCollection>
-                        </TextBlock.Transitions>
+                            <TextBlock.Transitions>
+                                <TransitionCollection>
+                                    <EntranceThemeTransition/>
+                                </TransitionCollection>
+                            </TextBlock.Transitions>
                         </TextBlock>
                     </Grid>
                     <Grid x:Name="Music" Margin="15,15,15,15" Grid.Row="1"  Grid.Column="2" 
@@ -70,11 +70,11 @@
                         <Ellipse x:Name="MusicRectangle" Fill="#FFD7E4BD" HorizontalAlignment="Center" Height="204" VerticalAlignment="Center" Width="272"/>
                         <TextBlock x:Name="MusicText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="心理音乐" VerticalAlignment="Center" 
                    FontSize="60" FontFamily="Microsoft YaHei" Foreground="#FF131416">
-                        <TextBlock.Transitions>
-                            <TransitionCollection>
-                                <EntranceThemeTransition/>
-                            </TransitionCollection>
-                        </TextBlock.Transitions>
+                            <TextBlock.Transitions>
+                                <TransitionCollection>
+                                    <EntranceThemeTransition/>
+                                </TransitionCollection>
+                            </TextBlock.Transitions>
                         </TextBlock>
                     </Grid>
                     <Grid x:Name="Game" Margin="15,15,15,15" Grid.Row="1"  Grid.Column="3" 
@@ -85,11 +85,11 @@
                         <Ellipse x:Name="GameRectangle" Fill="#FFD7E4BD" HorizontalAlignment="Center" Height="204"  VerticalAlignment="Center" Width="272"/>
                         <TextBlock x:Name="GameText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="心理游戏" VerticalAlignment="Center" 
                    FontSize="60" FontFamily="Microsoft YaHei" Foreground="#FF131416">
-                        <TextBlock.Transitions>
-                            <TransitionCollection>
-                                <EntranceThemeTransition/>
-                            </TransitionCollection>
-                        </TextBlock.Transitions>
+                            <TextBlock.Transitions>
+                                <TransitionCollection>
+                                    <EntranceThemeTransition/>
+                                </TransitionCollection>
+                            </TextBlock.Transitions>
                         </TextBlock>
                     </Grid>
                     <Grid x:Name="Test" Margin="15,15,15,15" Grid.Row="2"  Grid.Column="1" 
@@ -100,11 +100,11 @@
                         <Ellipse x:Name="TestRectangle" Fill="#FFD7E4BD" HorizontalAlignment="Center" Height="204"  VerticalAlignment="Center" Width="272"/>
                         <TextBlock x:Name="TestText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="心理测评" VerticalAlignment="Center" 
                    FontSize="60" FontFamily="Microsoft YaHei" Foreground="#FF131416">
-                        <TextBlock.Transitions>
-                            <TransitionCollection>
-                                <EntranceThemeTransition/>
-                            </TransitionCollection>
-                        </TextBlock.Transitions>
+                            <TextBlock.Transitions>
+                                <TransitionCollection>
+                                    <EntranceThemeTransition/>
+                                </TransitionCollection>
+                            </TextBlock.Transitions>
                         </TextBlock>
                     </Grid>
                     <Grid x:Name="Pic" Margin="15,15,15,15" Grid.Row="2"  Grid.Column="2" 
@@ -115,11 +115,11 @@
                         <Ellipse x:Name="PicRectangle" Fill="#FFD7E4BD" HorizontalAlignment="Center" Height="204"  VerticalAlignment="Center" Width="272"/>
                         <TextBlock x:Name="PicText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="心理图片" VerticalAlignment="Center" 
                    FontSize="60" FontFamily="Microsoft YaHei" Foreground="#FF131416">
-                        <TextBlock.Transitions>
-                            <TransitionCollection>
-                                <EntranceThemeTransition/>
-                            </TransitionCollection>
-                        </TextBlock.Transitions>
+                            <TextBlock.Transitions>
+                                <TransitionCollection>
+                                    <EntranceThemeTransition/>
+                                </TransitionCollection>
+                            </TextBlock.Transitions>
                         </TextBlock>
                     </Grid>
                     <Grid x:Name="BrainWave" Margin="15,15,15,15" Grid.Row="2"  Grid.Column="3" 
@@ -130,11 +130,11 @@
                         <Ellipse x:Name="BrainWaveRectangle" Fill="#FFD7E4BD" HorizontalAlignment="Center" Height="204" VerticalAlignment="Center" Width="272"/>
                         <TextBlock x:Name="BrainWaveText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="脑波诱导" VerticalAlignment="Center" 
                    FontSize="60" FontFamily="Microsoft YaHei" Foreground="#FF131416">
-                        <TextBlock.Transitions>
-                            <TransitionCollection>
-                                <EntranceThemeTransition/>
-                            </TransitionCollection>
-                        </TextBlock.Transitions>
+                            <TextBlock.Transitions>
+                                <TransitionCollection>
+                                    <EntranceThemeTransition/>
+                                </TransitionCollection>
+                            </TextBlock.Transitions>
                         </TextBlock>
                     </Grid>
                     <Grid x:Name="Grip" Margin="30,15,15,15" Grid.Row="1"  Grid.Column="0" Grid.RowSpan="2"
@@ -149,11 +149,11 @@
                                  Height="458" Width="135" />
                         <TextBlock x:Name="GripText" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" 
                         	FontSize="60" FontFamily="Microsoft YaHei" Foreground="#FF131416" Width="60" Text="握力宣泄">
-                        <TextBlock.Transitions>
-                            <TransitionCollection>
-                                <EntranceThemeTransition/>
-                            </TransitionCollection>
-                        </TextBlock.Transitions>
+                            <TextBlock.Transitions>
+                                <TransitionCollection>
+                                    <EntranceThemeTransition/>
+                                </TransitionCollection>
+                            </TextBlock.Transitions>
                         </TextBlock>
                     </Grid>
                     <Grid x:Name="Scream" Margin="15,15,30,15" Grid.Row="1"  Grid.Column="4" Grid.RowSpan="2"
@@ -174,7 +174,7 @@
                 </Grid>
             </Grid>
             <Grid Grid.Row="1" Background="#FF3A6BBB" />
-            <Button Grid.Row="1" Content="功能菜单" HorizontalAlignment="Left" Margin="-3,-3,0,-3" VerticalAlignment="Top" Height="66" Width="200" FontSize="35" Background="#FF447EDE" BorderBrush="#FF2E2E2E" FontFamily="Microsoft YaHei" BorderThickness="3"/>
+            <Button Grid.Row="1" Content="功能菜单" HorizontalAlignment="Left" Margin="0,-3" VerticalAlignment="Top" Height="66" Width="200" FontSize="35" Background="#FF447EDE" BorderBrush="#FF2E2E2E" FontFamily="Microsoft YaHei" BorderThickness="3"/>
             <MediaElement HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
         </Grid>
     </Grid>

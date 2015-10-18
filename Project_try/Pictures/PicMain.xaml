@@ -17,7 +17,7 @@
             <Grid x:Name="Nature" Grid.Row="0" Margin="10,10,10,10" PointerEntered="self_Entered" PointerExited="self_Exited" Tapped="self_Tapped" >
                 <Image Source="ms-appx:///Assets/Images/Frame.png" Margin="430,0"  />
                 <Image Source="ms-appx:///Assets/Images/山水情2.jpg" Margin="486,53,516,79" Stretch="Fill"  />
-                <Rectangle x:Name="R1" Margin="430,0,461,24" Fill="Black"  Opacity="0.3"/>
+                <Rectangle x:Name="R1" Margin="430,10,461,36" Fill="Black"  Opacity="0.3"/>
                 <Grid.Transitions>
                     <TransitionCollection>
                         <EntranceThemeTransition FromVerticalOffset="50" FromHorizontalOffset="0"/>
@@ -32,7 +32,7 @@
                 <Grid x:Name="Pun" Grid.Column="0" Margin="100,10,100,10" PointerEntered="self_Entered" PointerExited="self_Exited" Tapped="self_Tapped">
                     <Image Source="ms-appx:///Assets/Images/Frame.png" />
                     <Image Source="ms-appx:///Assets/Images/双关图2.png" Margin="48,68,75,93" Stretch="Fill"/>
-                    <Rectangle x:Name="R2" Margin="0,0,28,24" Fill="Black"  Opacity="0.3"/>
+                    <Rectangle x:Name="R2" Margin="0,24,28,45" Fill="Black"  Opacity="0.3"/>
                     <Grid.Transitions>
                         <TransitionCollection>
                             <EntranceThemeTransition FromVerticalOffset="70" FromHorizontalOffset="0"/>
@@ -42,7 +42,7 @@
                 <Grid x:Name="Illusion" Grid.Column="1" Margin="100,10,100,10" PointerEntered="self_Entered" PointerExited="self_Exited" Tapped="self_Tapped">
                     <Image  Source="ms-appx:///Assets/Images/Frame.png"/>
                     <Image  Source="ms-appx:///Assets/Images/错觉图2.png" Stretch="Fill" Margin="51,64,73,94"/>
-                    <Rectangle  x:Name="R3" Margin="0,0,28,24" Fill="Black"  Opacity="0.3"/>
+                    <Rectangle  x:Name="R3" Margin="0,21,28,43" Fill="Black"  Opacity="0.3"/>
                     <Grid.Transitions>
                         <TransitionCollection>
                             <EntranceThemeTransition FromVerticalOffset="90" FromHorizontalOffset="0"/>

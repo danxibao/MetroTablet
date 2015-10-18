@@ -163,7 +163,9 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="backButton" Click="BackButton_Click" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
+            <Button x:Name="backButton" Click="BackButton_Click" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}">
+                <Button Content="Button" Height="100" Width="100"/>
+            </Button>
             <TextBlock x:Name="pageTitle" Grid.Column="1" Text="山水情欣赏" Style="{StaticResource PageHeaderTextStyle}" FontFamily="Microsoft YaHei UI" />
         </Grid>
         <!-- Back button and page title -->
@@ -187,12 +189,17 @@
             </GridView.ItemTemplate>
         </GridView>
 
-        <Popup Grid.Row="1"  
-               x:Name="PhotoDetail" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,100" IsLightDismissEnabled="True"
+        <Popup Grid.Row="0"  Grid.RowSpan="2" x:Name="PhotoDetail"
+                HorizontalAlignment="Center" VerticalAlignment="Center" IsLightDismissEnabled="True"
                Width="800" Height="500" RequestedTheme="Default">
-            <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="800" Height="500">
-                <MediaElement x:Name="media" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="10" Height="480" Width="780" 
-                              Stretch="Uniform"  IsLooping="True"/>
+            <Grid x:Name="PopGrid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="500" Width="800">
+                <MediaElement x:Name="media" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="10" 
+                               IsLooping="True"
+                              />
+                <AppBarButton x:Name="FullScreenButton"
+                    VerticalAlignment="Bottom" HorizontalAlignment="Right" 
+                              Icon="FullScreen" Click="FullScreen_Click"
+                              />
             </Grid>
         </Popup>
 

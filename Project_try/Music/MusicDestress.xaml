@@ -125,7 +125,7 @@
                 <StackPanel x:Name="itemDetailTitlePanel" Grid.Row="0" >
                     <TextBlock x:Name="itemTitle" Margin="0,-10,0,0" Text="{Binding Title}" Style="{StaticResource SubheaderTextBlockStyle}"/>
                     <TextBlock x:Name="itemSubtitle" Margin="0,0,0,20" Text="{Binding Subtitle}" Style="{StaticResource SubtitleTextBlockStyle}"/>
-                    <MediaElement x:Name="MainImage" Margin="0,0,20,0" Height="550" IsLooping="True"
+                    <MediaElement x:Name="MainImage" IsLooping="True" Height="550"
                                   AutoPlay="True" Source="{Binding MP4Source}" />
                 </StackPanel>
                 <MediaElement x:Name="musicPlayer" Grid.Row="1" AreTransportControlsEnabled="True"  AudioCategory="BackgroundCapableMedia"

@@ -47,6 +47,28 @@ namespace Project_try.Pictures
             if (Frame != null && Frame.CanGoBack) Frame.GoBack();
         }
 
+        bool IsFullScreen = false;
+        private void FullScreen_Click(object sender, RoutedEventArgs e)
+        {
+            if (IsFullScreen)
+            {
+                PhotoDetail.Height = 500;
+                PhotoDetail.Width = 800;
+                PopGrid.Height = 500;
+                PopGrid.Width = 800;
+                FullScreenButton.Icon = new SymbolIcon(Symbol.FullScreen);
+            }
+            else
+            {
+                PhotoDetail.Height = 900;
+                PhotoDetail.Width = 1440;
+                PopGrid.Height = 900;
+                PopGrid.Width = 1440;
+                FullScreenButton.Icon = new SymbolIcon(Symbol.BackToWindow);
+            }
+            IsFullScreen = !IsFullScreen;
+        }
+
     }
 
 

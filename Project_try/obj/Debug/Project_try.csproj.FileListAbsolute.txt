@@ -181,3 +181,5 @@ E:\GIT\减压包\Project_try\obj\Debug\qualifiers.txt.intermediate
 E:\GIT\减压包\Project_try\obj\Debug\MultipleQualifiersPerDimensionFound.txt
 E:\GIT\减压包\Project_try\obj\Debug\ProjectArchitectures.txt
 E:\GIT\减压包\Project_try\bin\Debug\Project_try.build.appxrecipe
+D:\GIT\Project_try\Project_try\obj\Debug\Project_try.exe
+D:\GIT\Project_try\Project_try\obj\Debug\Project_try.pdb
