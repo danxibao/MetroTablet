@@ -12,6 +12,9 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using System.Net.Http;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 // “空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=234238 上有介绍
 
@@ -22,6 +25,8 @@ namespace Project_try
     /// </summary>
     public sealed partial class test_a : Page
     {
+        List<Problem> problem_list;
+        long paper_id_current=-1;
         int score = 0;
         int questionNumber = 10;
         String[] ABCDcontent = { "非常同意", "同意", "不同意", "非常不同意" };
@@ -46,29 +51,61 @@ namespace Project_try
                                  "10.有时我觉得自己一无是处。"};
  
 
-        public int question_index;
+        public int question_index=0;
         public test_a()
         {
             this.InitializeComponent();
 
-            Init_UI();
+            
         }
 
-        public void Init_UI()
+         async public void Init_UI()
         {
-            A.Content = ABCDcontent[0];
-            B.Content = ABCDcontent[1];
-            C.Content = ABCDcontent[2];
-            D.Content = ABCDcontent[3];
-            question_index = 0;
-            question.Text = questionArray[question_index];
+            
+            //new HttpClient().PostAsync();
+
+            if (null != problem_list)
+            {
+                return;
+            }
+            Dictionary<string, string> d = new Dictionary<string, string>();
+            d.Add("paper_id", "" + paper_id_current);
+            /*
+              
+           var jsonWriter = new JsonTextWriter(new StringWriter());
+           jsonWriter.StringEscapeHandling = StringEscapeHandling.EscapeHtml;
+           new JsonSerializer().Serialize(jsonWriter, d);
+             */
+            //string req_body  = jsonWriter.ToString();
+             var x = new JsonSerializerSettings();
+             x.StringEscapeHandling = StringEscapeHandling.EscapeHtml;
+            string req_body = JsonConvert.SerializeObject(d,   x);
+            HttpResponseMessage resp = await new HttpClient().PostAsync(
+                Config.service_url + "/PaperService/selectProblemListByPaperId",
+                new StringContent(req_body));
+            resp.EnsureSuccessStatusCode();
+            string resp_body = await resp.Content.ReadAsStringAsync();
+            List<Problem> problem_list0 = JsonConvert.DeserializeObject<List<Problem>>(resp_body);
+            problem_list = problem_list0;
+
+            A.Content = problem_list[question_index].option1;
+            B.Content = problem_list[question_index].option2;
+            C.Content = problem_list[question_index].option3;
+            D.Content = problem_list[question_index].option4;
+            question.Text = problem_list[question_index].title;
         }
 
         public void Update_UI()
         {
-            if (question_index < questionNumber)
+            if (question_index < problem_list.Count)
             {
-                question.Text = questionArray[question_index];
+
+                A.Content = problem_list[question_index].option1;
+                B.Content = problem_list[question_index].option2;
+                C.Content = problem_list[question_index].option3;
+                D.Content = problem_list[question_index].option4;
+                question.Text = problem_list[question_index].title;
+
                 //RYes.IsChecked = false;
                 //RNo.IsChecked = false;
                 A.IsChecked = false;
@@ -126,6 +163,13 @@ namespace Project_try
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             if (Frame != null && Frame.CanGoBack) Frame.GoBack();
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            this.paper_id_current = (long)e.Parameter;
+            Init_UI();
         }
     }
 }

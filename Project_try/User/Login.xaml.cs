@@ -51,6 +51,7 @@ namespace Project_try
                     passWord.BorderBrush = new SolidColorBrush(Colors.White);
                     Msg.Text = "";
                     Msg2.Text = "";
+                    Frame.Navigate(typeof(Self_test));
                     //用户名
                     if (userName.Text == "")
                     {
