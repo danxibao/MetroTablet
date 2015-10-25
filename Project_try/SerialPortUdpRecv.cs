@@ -38,7 +38,7 @@ namespace Project_try
                 if (Utility.IsConnectedToInternet())
                 {
                     HostName host = new HostName("localhost");
-                    string port = "10000";
+                    string port = "10000"; 
                     try
                     {
                         socket.MessageReceived += MessageReceived;
