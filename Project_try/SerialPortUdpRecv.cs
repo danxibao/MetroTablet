@@ -8,7 +8,9 @@ using System.Threading.Tasks;
 using Windows.Networking;
 using Windows.Networking.Sockets;
 using Windows.Storage.Streams;
-
+//测试本程序方案:
+//linux下运行: nc -u 本metro_app的ip 10000
+//输入任意字符串并回车，将触发方法MessageReceived
 namespace Project_try
 {
     public class Utility
@@ -86,7 +88,7 @@ namespace Project_try
 
                 byte[] bytes = WindowsRuntimeBufferExtensions.ToArray(buffer, 0, (int)buffer.Length);
                 string dataFromServer = Encoding.UTF8.GetString(bytes, 0, bytes.Length);//这为UDP返回的数据
-
+                // dataFromServer是收到的数据
                  
             }
             catch (Exception exception)
