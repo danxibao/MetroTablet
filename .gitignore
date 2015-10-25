@@ -1,1 +1,3 @@
-./Project_try/obj/*
+packages/
+Project_try/bin/
+Project_try/obj/
