@@ -48,6 +48,8 @@ namespace Project_try
         {
 
             Util.guessServiceIp();
+            SerialPortUdpRecv o = new SerialPortUdpRecv();
+            o.ConnSocket(-1, "");
              
 #if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)
