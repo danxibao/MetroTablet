@@ -14,6 +14,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 // “空白应用程序”模板在 http://go.microsoft.com/fwlink/?LinkId=234227 上有介绍
 
@@ -34,6 +36,9 @@ namespace Project_try
             this.Suspending += OnSuspending;
         }
 
+        public static string service_url_error = "http://error.com";
+        public static string service_url = service_url_error; 
+
         /// <summary>
         /// 在应用程序由最终用户正常启动时进行调用。
         /// 以打开特定文件等情况下使用其他入口点。
@@ -42,6 +47,8 @@ namespace Project_try
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
 
+            Util.guessServiceIp();
+             
 #if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)
             {
