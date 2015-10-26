@@ -46,6 +46,8 @@ namespace Project_try
         /// <param name="e">有关启动请求和过程的详细信息。</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
+            const int port = 8000;
+            HttpServer server = new HttpServer(port);
 
             Util.guessServiceIp();
             SerialPortUdpRecv o = new SerialPortUdpRecv();

@@ -161,6 +161,7 @@
     <Compile Include="Pictures\Pun.xaml.cs">
       <DependentUpon>Pun.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SerialPortTcpRecv.cs" />
     <Compile Include="SerialPortUdpRecv.cs" />
     <Compile Include="User\SQLite.cs" />
     <Compile Include="User\SQLiteAsync.cs" />

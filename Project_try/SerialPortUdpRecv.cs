@@ -37,7 +37,7 @@ namespace Project_try
                 socket = new DatagramSocket();
                 if (Utility.IsConnectedToInternet())
                 {
-                    HostName host = new HostName("localhost");
+                    HostName host = new HostName("192.168.183.200");
                     string port = "10000"; 
                     try
                     {
