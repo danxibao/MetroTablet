@@ -7,10 +7,31 @@ using System.Net;
 using Windows.Networking.Connectivity;
 using System.Net.Http;
 using Windows.UI.Core;
+using Windows.Devices;
+using Windows.Devices.Usb;
+using Windows.ApplicationModel;
+using Windows.Storage;
+using Windows.Foundation;
+
 namespace Project_try
 {
     class Util
     {
+        public 
+            async 
+            static void Test()
+        {
+            //access file at home_dir test
+            var folder = Package.Current.InstalledLocation;
+            var file = await folder.GetFileAsync(@"tmp\usb.txt");
+            var read = await FileIO.ReadTextAsync(file);
+            int i = 0;
+
+
+
+
+        }
+
         public static string CurrentIPAddress()
         {
             var icp = NetworkInformation.GetInternetConnectionProfile();
@@ -46,7 +67,7 @@ namespace Project_try
             string service_url = App.service_url_error;
 
             serviceIp = ipPre + "250";
-            service_url = string.Format("http://{0}:8080/bjpmr_service", serviceIp);
+            service_url = string.Format("http://{0}:8080/bjpmr_service/webservice", serviceIp);
             Config.service_url = App.service_url = service_url;
 
         }

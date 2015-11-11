@@ -155,12 +155,16 @@
     <Compile Include="Pictures\Illusion.xaml.cs">
       <DependentUpon>Illusion.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pictures\Flower.xaml.cs">
+      <DependentUpon>Flower.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pictures\PicMain.xaml.cs">
       <DependentUpon>PicMain.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pictures\Pun.xaml.cs">
       <DependentUpon>Pun.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RecursiveFileSearch.cs" />
     <Compile Include="SerialPortTcpRecv.cs" />
     <Compile Include="SerialPortUdpRecv.cs" />
     <Compile Include="User\SQLite.cs" />
@@ -232,8 +236,12 @@
     </AppxManifest>
     <None Include="Assets\Article\Catalog.dat" />
     <None Include="Assets\Article\心理文章.pdf" />
+    <None Include="i_am_bjpmr_win81_client_metro_app" />
     <None Include="packages.config" />
     <None Include="Project_try_TemporaryKey.pfx" />
+    <Content Include="serial_port_buf.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <PRIResource Include="AudioVisual\Strings\Resources.resw" />
   </ItemGroup>
   <ItemGroup>
@@ -250,6 +258,10 @@
     <Content Include="Assets\BackGround\2-2-3.mp3" />
     <Content Include="Assets\BackGround\MainBackGround.jpg" />
     <Content Include="Assets\BackGround\心理视听.jpg" />
+    <Content Include="Assets\Images\Flower\1.jpg" />
+    <Content Include="Assets\Images\Flower\2.jpg" />
+    <Content Include="Assets\Images\Flower\3.jpg" />
+    <Content Include="Assets\Images\Flower\4.jpg" />
     <Content Include="Assets\Images\Frame.png" />
     <Content Include="Assets\Images\IllusionPic\01.jpg" />
     <Content Include="Assets\Images\IllusionPic\02.png" />
@@ -557,6 +569,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pictures\Flower.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pictures\PicMain.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -637,9 +653,6 @@
   <ItemGroup>
     <SDKReference Include="Microsoft.VCLibs, version=12.0">
       <Name>Microsoft Visual C++ 2013 Runtime Package for Windows</Name>
-    </SDKReference>
-    <SDKReference Include="SQLite.WinRT81, Version=3.8.4.1">
-      <Name>SQLite for Windows Runtime %28Windows 8.1%291</Name>
     </SDKReference>
   </ItemGroup>
   <ItemGroup>

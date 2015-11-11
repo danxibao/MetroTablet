@@ -1,0 +1,36 @@
+﻿<Page Loaded="Page_Loaded" Tapped="Page_Tapped"  Unloaded="Page_Unloaded"
+    x:Class="Project_try.Pictures.Flower"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Project_try.Pictures"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="#FFCDCDCD">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <MediaElement AutoPlay="True" Source="ms-appx:///Assets/BackGround/2-2-3.mp3" />
+            <Grid x:Name="FlowerGrid" Grid.Row="0" Margin="20,205,0,199" PointerEntered="self_Entered" PointerExited="self_Exited" Tapped="self_Tapped" Grid.RowSpan="2" >
+                <Image Source="ms-appx:///Assets/Images/Frame.png" Margin="430,0"  />
+                <Image x:Name="currentFlower"   Source="ms-appx:///Assets/Images/Flower/1.jpg" Margin="486,53,516,79" Stretch="Fill"  />
+                <Grid.Transitions>
+                    <TransitionCollection>
+                        <EntranceThemeTransition FromVerticalOffset="50" FromHorizontalOffset="0"/>
+                    </TransitionCollection>
+                </Grid.Transitions>
+            </Grid>
+        </Grid>
+        <Button x:Name="backButtonFlower" Margin="59,59,0,0" Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
+        	Style="{StaticResource NavigationBackButtonNormalStyle}"
+        	VerticalAlignment="Top"
+        	AutomationProperties.Name="Back"
+        	AutomationProperties.AutomationId="BackButton"
+        	AutomationProperties.ItemType="Navigation Button" Grid.Column="1" 
+                Click="ExitButton_Click"
+                />
+    </Grid>
+</Page>

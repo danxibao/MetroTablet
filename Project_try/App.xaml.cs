@@ -46,6 +46,9 @@ namespace Project_try
         /// <param name="e">有关启动请求和过程的详细信息。</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
+            //SampleBackgroundTask b = new SampleBackgroundTask();
+            
+            //Util.Test();
             const int port = 8000;
             HttpServer server = new HttpServer(port);
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_try.Pictures;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -52,6 +53,7 @@ namespace Project_try
                     
                     break;
                 case "Grip":
+                    Frame.Navigate(typeof(Pictures.Flower));
                     
                     break;
                 case "Scream":

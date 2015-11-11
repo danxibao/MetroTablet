@@ -1,0 +1,2 @@
+¥ÌŒÛ	1	’“≤ªµΩ SDK°∞SQLite.WinRT81, Version=3.8.4.1°±°£	Project_try
+Newtonsoft.Json
